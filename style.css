@@ -19,10 +19,59 @@ html {
 body {
   font-family: sofiaPro;
   min-height: 100vh;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 100vh 100vh 120vh 10vh;
       grid-template-rows: 100vh 100vh 120vh 10vh;
+}
+
+body .bgg {
+  position: absolute;
+  z-index: -2;
+  width: 60vw;
+  height: 90vh;
+  right: 10%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .sitoWeb {
+  position: absolute;
+  right: 6rem;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .sitoWeb button {
+  background: transparent;
+  border: 2.5px solid #FF6B2C;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 2rem;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body .sitoWeb button a {
+  color: #3C67FF;
+}
+
+body .sitoWeb button:hover {
+  background-color: #FF6B2C;
+}
+
+body .sitoWeb button:hover a {
+  color: #fff;
 }
 
 .landingPage, .website, .projects {
@@ -41,9 +90,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: url("/css/icons/bgGray.svg") no-repeat;
-  background-size: 60vw 70vh;
-  background-position: top right;
 }
 
 .landingPage section:first-child nav {
@@ -61,7 +107,7 @@ body {
 }
 
 .landingPage section:first-child nav img {
-  width: 80px;
+  width: 100px;
 }
 
 .landingPage section:first-child nav ul li {
@@ -73,6 +119,12 @@ body {
   color: #000;
   font-size: 17.5px;
   font-weight: 900;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+.landingPage section:first-child nav ul li a:hover {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .landingPage section:first-child h1 {
@@ -123,6 +175,8 @@ body {
   outline: none;
   border: none;
   padding: 1rem 2rem;
+  -webkit-transition: 1s ease-in-out all;
+  transition: 1s ease-in-out all;
 }
 
 .landingPage section:last-child .talk a {
@@ -143,6 +197,10 @@ body {
   color: #fff;
   font-size: 19px;
   padding: 0 1rem;
+}
+
+.landingPage section:last-child .talk:hover {
+  background-color: #FF6B2C;
 }
 
 .website {
@@ -247,6 +305,12 @@ body {
   font-weight: 700;
   margin-right: 2rem;
   cursor: pointer;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+.website .button div button:hover {
+  background-color: #FF6B2C;
 }
 
 .website .button div:last-child {
@@ -343,6 +407,13 @@ footer .semiContainer div a {
   font-size: 17px;
 }
 
+@media screen and (max-width: 1440px) {
+  body {
+    -ms-grid-rows: 130vh 130vh 120vh 10vh;
+        grid-template-rows: 130vh 130vh 120vh 10vh;
+  }
+}
+
 @media screen and (max-width: 1300px) {
   .website .img img {
     width: 100%;
@@ -358,6 +429,15 @@ footer .semiContainer div a {
   }
   .website, .projects, .landingPage {
     padding: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  body .sitoWeb {
+    display: none;
+  }
+  body .bgg {
+    display: none;
   }
 }
 
@@ -391,6 +471,8 @@ footer .semiContainer div a {
   body {
     background: none;
     background-image: none;
+    -ms-grid-rows: 150vh 150vh 120vh 10vh;
+        grid-template-rows: 150vh 150vh 120vh 10vh;
   }
   .landingPage {
     background: none;
@@ -411,20 +493,19 @@ footer .semiContainer div a {
 }
 
 @media screen and (max-width: 600px) {
-  body {
-    -ms-grid-rows: 110vh 150vh 120vh 10vh;
-        grid-template-rows: 110vh 150vh 120vh 10vh;
-  }
   .website .img img {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 576px) {
   body {
-    -ms-grid-rows: 130vh 150vh 120vh 10vh;
-        grid-template-rows: 130vh 150vh 120vh 10vh;
+    -ms-grid-rows: 170vh 170vh 120vh 10vh;
+        grid-template-rows: 170vh 170vh 120vh 10vh;
   }
+}
+
+@media screen and (max-width: 500px) {
   .landingPage section:first-child .tags .tag {
     padding: 1rem 1.5rem;
   }
@@ -435,6 +516,10 @@ footer .semiContainer div a {
 }
 
 @media screen and (max-width: 450px) {
+  body {
+    -ms-grid-rows: 190vh 190vh 120vh 10vh;
+        grid-template-rows: 190vh 190vh 120vh 10vh;
+  }
   .landingPage section:first-child .tags .tag h2 {
     font-size: 21px;
   }
@@ -472,8 +557,8 @@ footer .semiContainer div a {
 
 @media screen and (max-width: 405px) {
   body {
-    -ms-grid-rows: 160vh 160vh 120vh 10vh;
-        grid-template-rows: 160vh 160vh 120vh 10vh;
+    -ms-grid-rows: 200vh 200vh 120vh 10vh;
+        grid-template-rows: 200vh 200vh 120vh 10vh;
   }
   .landingPage section:last-child .talk {
     width: 100%;
@@ -508,38 +593,17 @@ footer .semiContainer div a {
   }
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (max-width: 350px) {
   body {
-    -ms-grid-rows: 140vh 150vh 120vh 10vh;
-        grid-template-rows: 140vh 150vh 120vh 10vh;
+    -ms-grid-rows: 230vh 230vh 120vh 10vh;
+        grid-template-rows: 230vh 230vh 120vh 10vh;
   }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-width: 321px) {
   body {
-    -ms-grid-rows: 170vh 170vh 120vh 10vh;
-        grid-template-rows: 170vh 170vh 120vh 10vh;
-  }
-}
-
-@media screen and (max-height: 600px) {
-  body {
-    -ms-grid-rows: 180vh 180vh 120vh 10vh;
-        grid-template-rows: 180vh 180vh 120vh 10vh;
-  }
-}
-
-@media screen and (max-height: 550px) {
-  body {
-    -ms-grid-rows: 210vh 210vh 120vh 10vh;
-        grid-template-rows: 210vh 210vh 120vh 10vh;
-  }
-}
-
-@media screen and (max-height: 500px) {
-  body {
-    -ms-grid-rows: 260vh 260vh 120vh 10vh;
-        grid-template-rows: 260vh 260vh 120vh 10vh;
+    -ms-grid-rows: 270vh 270vh 120vh 10vh;
+        grid-template-rows: 270vh 270vh 120vh 10vh;
   }
 }
 /*# sourceMappingURL=style.css.map */

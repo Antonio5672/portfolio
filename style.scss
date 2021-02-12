@@ -18,8 +18,42 @@ html{ scroll-behavior: smooth; }
 body{
     font-family: sofiaPro;
     min-height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-rows: 100vh 100vh 120vh 10vh;
+
+    .bgg{
+        position: absolute;
+        z-index: -2;
+        width: 60vw;
+        height: 90vh;
+        right: 10%;
+        object-fit: cover;
+    }
+
+    .sitoWeb{
+        position: absolute;
+        right: 6rem;
+        top: 50%;
+        transform: translate(0, -50%);
+        display: flex;
+        align-items: center;
+        button{
+            background: transparent;
+            border: 2.5px solid $orange;
+            border-radius: 15px;
+            padding: 1rem 2rem;
+            font-size: 16px;
+            font-weight: 600;
+            a{ color: $blue; }
+            margin-left: 2rem;
+            transition: 1s ease all;
+        }
+        button:hover{
+            background-color: $orange;
+            a{ color: #fff; }
+        }
+    }
 }
 .landingPage, .website, .projects{
     height: 100%;
@@ -29,11 +63,6 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
-    background: url('/css/icons/bgGray.svg') no-repeat;
-    background-size: 60vw 70vh;
-    background-position: top right;
-
     section:first-child{
         nav{
             display: flex;
@@ -41,7 +70,7 @@ body{
             justify-content: space-between;
             height: 8vh;
             width: 100%;
-            img{ width: 80px; }
+            img{ width: 100px; }
             ul li{
                 padding: 0 2rem;
                 display: inline-block;
@@ -49,6 +78,10 @@ body{
                     color: #000;
                     font-size: 17.5px;
                     font-weight: 900;
+                    transition: 1s ease all;
+                }
+                a:hover{
+                    color: rgba(0,0,0,0.7);
                 }
             }
         }
@@ -102,6 +135,10 @@ body{
                     padding: 0 1rem;
                 }
             }
+            transition: 1s ease-in-out all;
+        }
+        .talk:hover{
+            background-color: $orange;
         }
     }
 }
@@ -164,6 +201,10 @@ body{
                 font-weight: 700;
                 margin-right: 2rem;
                 cursor: pointer;
+                transition: 1s ease all;
+            }
+            button:hover{
+                background-color: $orange;
             }
         }
         div:last-child{
@@ -214,10 +255,6 @@ body{
     }
 }
 
-// @media screen and (max-width: 1340px){
-
-// }
-
 // END PROJECTS
 footer{
     height: 10vh;
@@ -236,6 +273,13 @@ footer{
             color: rgba(0,0,0,0.8);
             font-size: 17px;
         }
+    }
+}
+
+//* 1440PX 
+@media screen and (max-width: 1440px){
+    body{
+        grid-template-rows: 130vh 130vh 120vh 10vh;
     }
 }
 
@@ -259,7 +303,16 @@ footer{
     }
 }
 
+@media screen and (max-width: 1130px){
+    body{
+        .sitoWeb{
+            display: none;
+        }
+        .bgg{ display: none; }
+    }
+}
 
+//* 860PX
 @media screen and (max-width: 860px){
     body{
          grid-template-rows: 100vh 130vh 120vh 10vh;
@@ -283,10 +336,13 @@ footer{
     }
 }
 
+
+//* 800PX 
 @media screen and (max-width: 800px){
     body{
         background: none;
         background-image: none;
+        grid-template-rows: 150vh 150vh 120vh 10vh;
     }
     .landingPage{
         background: none;
@@ -309,18 +365,17 @@ footer{
 }
 
 @media screen and (max-width: 600px){
-    body{
-        grid-template-rows: 110vh 150vh 120vh 10vh;
-    }
     .website .img img{
         width: 100%;
     }
 }
 
+//* 576PX
+@media screen and (max-width: 576px){
+    body{ grid-template-rows: 170vh 170vh 120vh 10vh; }
+}
+
 @media screen and (max-width: 500px){
-    body{
-        grid-template-rows: 130vh 150vh 120vh 10vh;
-    }
     .landingPage section:first-child{
         .tags .tag{
             padding: 1rem 1.5rem;
@@ -332,6 +387,8 @@ footer{
     }
 }
 @media screen and (max-width: 450px){
+    body{ grid-template-rows: 190vh 190vh 120vh 10vh; }
+
     .landingPage section:first-child{
         .tags .tag h2 {
             font-size: 21px;
@@ -358,7 +415,7 @@ footer{
 }
 
 @media screen and (max-width: 405px){
-    body{ grid-template-rows: 160vh 160vh 120vh 10vh; }
+    body{ grid-template-rows: 200vh 200vh 120vh 10vh; }
     .landingPage{
         section:last-child{
             .talk{
@@ -384,28 +441,11 @@ footer{
     }
 }
 
-@media screen and (max-height: 800px){
-    body{
-        grid-template-rows: 140vh 150vh 120vh 10vh;
-    }
+//* 350PX
+@media screen and (max-width: 350px){
+    body{ grid-template-rows: 230vh 230vh 120vh 10vh; }
 }
-@media screen and (max-height: 700px){
-    body{
-        grid-template-rows: 170vh 170vh 120vh 10vh;
-    }
-}
-@media screen and (max-height: 600px){
-    body{
-        grid-template-rows: 180vh 180vh 120vh 10vh;
-    }
-}
-@media screen and (max-height: 550px){
-    body{
-        grid-template-rows: 210vh 210vh 120vh 10vh;
-    }
-}
-@media screen and (max-height: 500px){
-    body{
-        grid-template-rows: 260vh 260vh 120vh 10vh;
-    }
+//* 320PX
+@media screen and (max-width: 321px){
+    body{ grid-template-rows: 270vh 270vh 120vh 10vh; }
 }
