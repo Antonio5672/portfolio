@@ -1,0 +1,18 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio for my website",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "author": "Salzano Antonio",
+  "license": "MIT",
+  "dependencies": {
+    "locomotive-scroll": "^4.1.0"
+  }
+}

@@ -5,6 +5,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -17,171 +18,66 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-family: sofiaPro;
   min-height: 100vh;
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 100vh 100vh 120vh 10vh;
-      grid-template-rows: 100vh 100vh 120vh 10vh;
 }
 
-body .bgg {
+.wrapper {
+  padding: 3rem 5rem;
+}
+
+#landingPage {
+  min-height: 100vh;
+}
+
+#landingPage .bg {
   position: absolute;
-  z-index: -2;
-  width: 60vw;
-  height: 90vh;
-  right: 10%;
+  z-index: -1;
+  right: 0;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 70%;
+  height: 70%;
 }
 
-body .sitoWeb {
-  position: absolute;
-  right: 6rem;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+#landingPage .flexxed {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding-right: 5rem;
 }
 
-body .sitoWeb button {
-  background: transparent;
+#landingPage .flexxed button {
+  width: unset;
+  background-color: transparent;
   border: 2.5px solid #FF6B2C;
-  border-radius: 15px;
-  padding: 1rem 2rem;
-  font-size: 16px;
+  border-radius: 30px;
+  color: #3C67FF;
+  padding: 0 3rem;
+  font-size: 17px;
   font-weight: 600;
   margin-left: 2rem;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
-}
-
-body .sitoWeb button a {
-  color: #3C67FF;
-}
-
-body .sitoWeb button:hover {
-  background-color: #FF6B2C;
-}
-
-body .sitoWeb button:hover a {
-  color: #fff;
-}
-
-.landingPage, .website, .projects {
-  height: 100%;
-  padding: 3rem 4rem;
-}
-
-.landingPage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.landingPage section:first-child nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 8vh;
-  width: 100%;
-}
-
-.landingPage section:first-child nav img {
-  width: 100px;
-}
-
-.landingPage section:first-child nav ul li {
-  padding: 0 2rem;
-  display: inline-block;
-}
-
-.landingPage section:first-child nav ul li a {
-  color: #000;
-  font-size: 17.5px;
-  font-weight: 900;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
-}
-
-.landingPage section:first-child nav ul li a:hover {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.landingPage section:first-child h1 {
-  color: #3C67FF;
-  font-size: 63px;
-  margin: 2rem 0;
-}
-
-.landingPage section:first-child h1 span {
-  color: #FF6B2C;
-}
-
-.landingPage section:first-child .tags {
-  margin-bottom: 4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.landingPage section:first-child .tags .tag {
-  background: #FF6B2C;
-  border-radius: 30px;
-  padding: 1rem 2rem;
-}
-
-.landingPage section:first-child .tags .tag h2 {
-  font-size: 23px;
-  color: #fff;
-}
-
-.landingPage section:first-child .tags .tag:first-child {
-  margin-right: 2rem;
-  background: #FF6B2C;
-}
-
-.landingPage section:first-child .content p:first-child {
-  color: #000;
-}
-
-.landingPage section:first-child .content p {
-  font-size: 18.5px;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 2rem 0;
-}
-
-.landingPage section:last-child .talk {
-  background-color: #3C67FF;
-  outline: none;
-  border: none;
-  padding: 1rem 2rem;
   -webkit-transition: 1s ease-in-out all;
   transition: 1s ease-in-out all;
 }
 
-.landingPage section:last-child .talk a {
-  width: 100%;
-  height: 100%;
+#landingPage .flexxed button:hover {
+  background-color: #3C67FF;
+  color: #fff;
+  border-color: transparent;
+}
+
+#landingPage nav {
+  height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,175 +89,473 @@ body .sitoWeb button:hover a {
           justify-content: space-between;
 }
 
-.landingPage section:last-child .talk a h3 {
-  color: #fff;
-  font-size: 19px;
-  padding: 0 1rem;
+#landingPage nav img {
+  width: 80px;
 }
 
-.landingPage section:last-child .talk:hover {
+#landingPage nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#landingPage nav ul li {
+  padding: 1rem 2rem;
+  margin: 0 1rem;
+  border-radius: 45px;
+  background-color: transparent;
+  -webkit-transition: 2s ease all;
+  transition: 2s ease all;
+}
+
+#landingPage nav ul li a {
+  color: #000;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+#landingPage nav ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#landingPage .main_title {
+  font-size: 60px;
+  color: #3C67FF;
+  margin: 3rem 0;
+}
+
+#landingPage .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem 0;
+}
+
+#landingPage .tags .tag {
   background-color: #FF6B2C;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 45px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.website {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
-  -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
-      grid-template-areas: "title img" "content img" "button img";
+#landingPage .tags .tag h1 {
+  font-size: 22px;
 }
 
-.website .title {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: title;
+#landingPage .tags .tag:first-child {
+  margin-right: 3rem;
 }
 
-.website .title h1 {
-  font-size: 63px;
+#landingPage header {
+  margin: 3rem 0;
 }
 
-.website .content {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+#landingPage header p {
+  font-size: 19px;
+  margin: 2rem 0;
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.website .content p {
-  font-size: 20px;
-  margin: 1rem 0;
+#landingPage header p:first-child {
+  color: black;
 }
 
-.website .content p:last-child {
-  color: #FF6B2C;
-  font-weight: 900;
-  font-size: 25px;
-}
-
-.website .img {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 2;
-  grid-area: img;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.website .button {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: button;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.website .button div:first-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.website .button div:first-child img {
-  width: 40px;
-}
-
-.website .button div button {
+#landingPage button {
+  width: 230px;
+  height: 70px;
   background-color: #3C67FF;
   outline: none;
   border: none;
-  color: #fff;
-  padding: 1.5rem 2rem;
-  font-size: 18px;
-  font-weight: 700;
-  margin-right: 2rem;
   cursor: pointer;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 2rem;
+  margin: 3rem 0;
+  color: #fff;
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
 }
 
-.website .button div button:hover {
-  background-color: #FF6B2C;
+#landingPage button h1 {
+  font-size: 20px;
 }
 
-.website .button div:last-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 0.5rem;
+#landingPage button:hover {
+  background-color: #1d4dfa;
 }
 
-.website .button div:last-child p {
-  margin-right: 1rem;
-  color: rgba(0, 0, 0, 0.8);
+@media screen and (min-width: 2561px) and (max-width: 4000px) {
+  #landingPage .wrapper {
+    padding: 7rem;
+  }
+  #landingPage nav img {
+    width: 200px;
+  }
+  #landingPage nav ul li a {
+    font-size: 40px;
+  }
+  #landingPage .main_title {
+    font-size: 160px;
+    margin: 5rem 0;
+  }
+  #landingPage .tags .tag {
+    padding: 2.5rem 4.5rem;
+    border-radius: 90px;
+  }
+  #landingPage .tags .tag h1 {
+    font-size: 55px;
+  }
+  #landingPage header p {
+    margin: 7rem 0;
+    font-size: 48px;
+  }
+  #landingPage button {
+    width: 500px;
+    height: 160px;
+  }
+  #landingPage button img {
+    width: 100px;
+  }
+  #landingPage button h1 {
+    font-size: 45px;
+  }
+  #landingPage .flexxed button {
+    border-width: 5.5px;
+    padding: 4rem;
+    border-radius: 60px;
+    font-size: 42px;
+    margin-left: 4rem;
+  }
+  #landingPage .flexxed img {
+    width: 40px;
+  }
 }
 
-.projects {
-  background-color: #3C67FF;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 10% 90%;
-      grid-template-rows: 10% 90%;
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  #landingPage .tags .tag {
+    padding: 1.75rem 3rem;
+    margin: 4rem 0;
+  }
+  #landingPage .tags .tag h1 {
+    font-size: 35px;
+  }
+  #landingPage header p {
+    font-size: 32px;
+    margin: 4rem 0;
+  }
+  #landingPage button {
+    width: 330px;
+    height: 100px;
+    margin: 10rem 0;
+  }
+  #landingPage button h1 {
+    font-size: 30px;
+  }
+  #landingPage button img {
+    width: 60px;
+  }
+  #landingPage .flexxed button {
+    border-width: 4.5px;
+    padding: 3rem 5rem;
+    font-size: 28px;
+    margin-left: 3rem;
+  }
 }
 
-.projects .title {
+@media screen and (max-width: 1100px) {
+  #landingPage header p, #landingPage .main_title {
+    text-align: center;
+  }
+  #landingPage header p {
+    margin: 3rem 0;
+  }
+  #landingPage .tags {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #landingPage button {
+    margin: 0 auto;
+  }
+  #landingPage .flexxed {
+    display: none;
+  }
+  #landingPage .bg {
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #landingPage .wrapper {
+    padding: 3rem;
+  }
+  #landingPage .tags {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #landingPage .tags .tag:first-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #landingPage button {
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #landingPage .tags {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #landingPage .tags .tag:first-child {
+    margin-bottom: 3rem;
+  }
+  #landingPage .main_title {
+    font-size: 53.5px;
+  }
+  #landingPage header p {
+    margin: 4rem 0;
+  }
+  #landingPage nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #landingPage .wrapper {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #landingPage .main_title {
+    font-size: 47px;
+  }
+  #landingPage button {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+#web {
+  min-height: 100vh;
+  position: relative;
+}
+
+#web .wrapper {
+  padding: 1rem 5rem;
+}
+
+#web .main_title {
+  font-size: 60px;
+  margin: 3rem 0;
+}
+
+#web header {
+  margin: 5rem 0;
+}
+
+#web header p {
+  font-size: 20px;
+  margin: 3rem 0;
+}
+
+#web header .main {
+  color: #FF6B2C;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+#web .flexBtn {
+  position: absolute;
+  bottom: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-.projects .title h1 {
+#web .flexBtn button {
+  background-color: #3C67FF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 250px;
+  height: 70px;
+  padding: 0 2rem;
+  margin-right: 2rem;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+#web .flexBtn button h1 {
   color: #fff;
-  letter-spacing: 3px;
-  font-size: 35px;
+  font-size: 19px;
+  font-weight: 600;
 }
 
-.projects .swiper-container {
-  margin-left: revert;
-  margin-right: revert;
+#web .flexBtn button:hover {
+  background-color: #1d4dfa;
 }
 
-.projects .swiper-container .swiper-button-next,
-.projects .swiper-container .swiper-button-prev {
+#web .flexBtn img {
+  width: 45px;
+}
+
+#web .imgWeb {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  -webkit-transform: translate(-70%, -50%);
+          transform: translate(-70%, -50%);
+  width: 40%;
+}
+
+@media screen and (min-width: 2561px) and (max-width: 4000px) {
+  #web header p {
+    font-size: 48px;
+    margin: 7rem 0;
+  }
+  #web header .main {
+    font-size: 60px;
+  }
+  #web .imgWeb {
+    width: 45%;
+  }
+  #web .flexBtn button {
+    width: 560px;
+    height: 180px;
+    margin-right: 5rem;
+  }
+  #web .flexBtn button h1 {
+    font-size: 48px;
+  }
+  #web .flexBtn img {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  #web .imgWeb {
+    width: 50%;
+  }
+  #web header p {
+    font-size: 32px;
+    margin: 5rem 0;
+  }
+  #web header .main {
+    font-size: 37px;
+  }
+  #web .flexBtn button {
+    width: 430px;
+    height: 120px;
+    margin-right: 3rem;
+  }
+  #web .flexBtn button h1 {
+    font-size: 30px;
+  }
+  #web .flexBtn img {
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #web .flexBtn {
+    position: unset;
+    margin: 5rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #web .imgWeb {
+    position: unset;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+  }
+  #web .main_title, #web header p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #web .imgWeb {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #web .wrapper {
+    padding: 2rem;
+  }
+  #web .main_title {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #web .flexBtn {
+    display: block;
+  }
+  #web .flexBtn button {
+    width: 100%;
+    margin-right: 0;
+    margin: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #web .main_title {
+    font-size: 47px;
+  }
+}
+
+#mockups {
+  min-height: 100vh;
+  background-color: #3C67FF;
+}
+
+#mockups .swiper-button-next, #mockups .swiper-button-prev {
   color: #FF6B2C;
 }
 
-.projects .swiper-container .swiper-slide {
+#mockups .wrapper .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,17 +567,56 @@ body .sitoWeb button:hover a {
           justify-content: center;
 }
 
-.projects .swiper-container .swiper-slide img {
-  max-width: 100%;
-  max-height: 100%;
+#mockups .wrapper div h1 {
+  color: #fff;
+  padding-bottom: 3rem;
+  font-size: 45px;
+  text-align: center;
+}
+
+@media screen and (min-width: 2561px) and (max-width: 4000px) {
+  #mockups .wrapper div h1 {
+    font-size: 140px;
+    padding-bottom: 9rem;
+  }
+  #mockups .imageSlide {
+    width: 90%;
+  }
+  #mockups .swiper-button-prev:after, #mockups .swiper-button-next:after {
+    font-size: 100px;
+  }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  #mockups .wrapper {
+    padding: 5rem;
+  }
+  #mockups .wrapper div h1 {
+    font-size: 80px;
+    padding-bottom: 5rem;
+  }
+  #mockups .imageSlide {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #mockups .wrapper {
+    padding: 2rem;
+  }
 }
 
 footer {
-  height: 10vh;
   background-color: #fff;
+  width: 100%;
+  height: 10vh;
 }
 
-footer .semiContainer {
+footer .wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 0 5rem;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,217 +626,79 @@ footer .semiContainer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  padding: 0 2rem;
 }
 
-footer .semiContainer div a:first-child {
-  padding-right: 2rem;
-}
-
-footer .semiContainer div a {
-  color: rgba(0, 0, 0, 0.8);
+footer .wrapper div a {
+  color: #000;
+  font-weight: 600;
   font-size: 17px;
+  padding: 1rem 2rem;
+  border-radius: 45px;
+  background-color: transparent;
+  -webkit-transition: 2s ease all;
+  transition: 2s ease all;
 }
 
-@media screen and (max-width: 1440px) {
-  body {
-    -ms-grid-rows: 130vh 130vh 120vh 10vh;
-        grid-template-rows: 130vh 130vh 120vh 10vh;
-  }
+footer .wrapper a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 1300px) {
-  .website .img img {
-    width: 100%;
-  }
-  .website .title h1 {
-    font-size: 53px;
-  }
-  .website .content p {
-    font-size: 18px;
-  }
-  .website .content p:last-child {
-    font-size: 23px;
-  }
-  .website, .projects, .landingPage {
-    padding: 2.5rem;
-  }
-}
-
-@media screen and (max-width: 1130px) {
-  body .sitoWeb {
-    display: none;
-  }
-  body .bgg {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 860px) {
-  body {
-    -ms-grid-rows: 100vh 130vh 120vh 10vh;
-        grid-template-rows: 100vh 130vh 120vh 10vh;
-  }
-  .website {
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-        grid-template-areas: "title" "content" "img" "button";
-  }
-  .website .img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  .website .img img {
-    width: 70%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  body {
-    background: none;
-    background-image: none;
-    -ms-grid-rows: 150vh 150vh 120vh 10vh;
-        grid-template-rows: 150vh 150vh 120vh 10vh;
-  }
-  .landingPage {
-    background: none;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .landingPage section:first-child h1 {
-    font-size: 47.5px;
-    margin: 6rem 0;
-  }
-  .website .title h1 {
-    font-size: 47.5px;
-  }
-  footer .semiContainer div a {
-    font-size: 15px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .website .img img {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  body {
-    -ms-grid-rows: 170vh 170vh 120vh 10vh;
-        grid-template-rows: 170vh 170vh 120vh 10vh;
-  }
+footer .wrapper .goOn {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
-  .landingPage section:first-child .tags .tag {
-    padding: 1rem 1.5rem;
-  }
-  .landingPage section:first-child .content p {
-    font-size: 18px;
-    margin: 3rem 0;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  body {
-    -ms-grid-rows: 190vh 190vh 120vh 10vh;
-        grid-template-rows: 190vh 190vh 120vh 10vh;
-  }
-  .landingPage section:first-child .tags .tag h2 {
-    font-size: 21px;
-  }
-  .landingPage, .projects, .website {
+  footer .wrapper {
     padding: 2rem;
   }
-  .landingPage section:first-child nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  footer {
+    height: 25vh;
+  }
+  footer .wrapper {
+    padding: 3rem 2rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    height: 10vh;
   }
-  .landingPage section:first-child nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .landingPage section:first-child nav ul li {
-    padding: 0;
-  }
-  .landingPage section:first-child nav ul li:first-child {
-    padding-right: 2rem;
+  footer .wrapper div a {
+    padding: 0 1rem;
   }
 }
 
-@media screen and (max-width: 405px) {
-  body {
-    -ms-grid-rows: 200vh 200vh 120vh 10vh;
-        grid-template-rows: 200vh 200vh 120vh 10vh;
+@media screen and (min-width: 2561px) and (max-width: 4000px) {
+  #landingPage .wrapper, #web .wrapper, #mockups .wrapper {
+    padding: 7rem;
   }
-  .landingPage section:last-child .talk {
-    width: 100%;
+  #landingPage .main_title, #web .main_title, #mockups .main_title {
+    font-size: 160px;
   }
-  .landingPage section:last-child .talk a {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+  #landingPage nav ul li a, footer .wrapper div a {
+    font-size: 40px;
   }
-  .landingPage section:first-child .tags {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .landingPage section:first-child .tags .tag {
-    padding: 1rem 3rem;
-    margin: 1rem 0;
-  }
-  .website .button div:first-child img {
-    display: none;
-  }
-  .website .button div button {
-    margin-right: 0;
-    width: 100%;
+  footer .wrapper .goOn {
+    width: 100px;
   }
 }
 
-@media screen and (max-width: 350px) {
-  body {
-    -ms-grid-rows: 230vh 230vh 120vh 10vh;
-        grid-template-rows: 230vh 230vh 120vh 10vh;
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  #landingPage .main_title, #web .main_title, #mockups .main_title {
+    font-size: 100px;
+  }
+  #landingPage nav ul li a, footer .wrapper div a {
+    font-size: 28px;
+  }
+  footer .wrapper .goOn {
+    width: 80px;
   }
 }
 
-@media screen and (max-width: 321px) {
-  body {
-    -ms-grid-rows: 270vh 270vh 120vh 10vh;
-        grid-template-rows: 270vh 270vh 120vh 10vh;
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  footer {
+    height: 25vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
