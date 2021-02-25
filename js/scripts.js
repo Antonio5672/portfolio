@@ -1,15 +1,8 @@
-(function () {
-    var scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
-    });
-})();
+import Swiper from 'swiper/bundle';
+// import Swiper styles
+import 'swiper/swiper-bundle.css';
 
-AOS.init({
-    duration: 1700
-})
-
-var Swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     cssMode: true,
     mousewheel: true,
@@ -19,27 +12,33 @@ var Swiper = new Swiper('.swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
     }
-})
+
+});
 
 const images = document.querySelectorAll('.imageSlide');
 images.forEach(image => {
     if (window.outerWidth > 1200) {
-        image.src = '/mockUps/Blog/mockUpWhitePc.png'
+        image.src = require('../css/icons/mockUpWhitePc.png')
     }
 
-    if (window.outerWidth < 1200) {
-        image.src = '/mockUps/Blog/mockUpWhiteTablet.png';
+    if (window.outerWidth < 1199) {
+        image.src = require('../css/icons/mockUpWhiteTablet.png')
     }
 
-    if (window.outerWidth < 920) {
-        image.src = '/mockUps/Blog/mockUpWhitePhone.png';
-        // image.style.width = '100%';
+    if (window.outerWidth < 900) {
+        image.src = require('../css/icons/mockUpWhitePhone.png')
+        image.style.width = 'auto'
     }
 
     if (window.outerWidth < 600) {
         image.style.width = '100%'
     }
+    console.log(image.src)
+})
 
+// AOS ANIMATION LIBRARY
+AOS.init({
+    duration: 1700
 })
 
 const goOn = document.querySelector('.goOn');

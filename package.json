@@ -4,7 +4,8 @@
   "description": "portfolio for my website",
   "main": "scripts.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,11 @@
   "author": "Salzano Antonio",
   "license": "MIT",
   "dependencies": {
-    "locomotive-scroll": "^4.1.0"
+    "locomotive-scroll": "^4.1.0",
+    "parcel-bundler": "^1.12.4",
+    "swiper": "^6.4.15"
+  },
+  "devDependencies": {
+    "sass": "^1.32.8"
   }
 }
